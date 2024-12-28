@@ -1,0 +1,632 @@
+:root {
+    --chrysler_blue: #5603AD;
+    --amethyst: #8367C7;
+    --celadon: #B3E9C7;
+    --tea_green: #C2F8CB;
+    --honeydew: #F0FFF1;
+}
+
+.layout {
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+    margin: 0px;
+    position: relative;
+}
+
+.topbar {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    width: calc(100% - 2 * clamp(10px, 5vw, 80px));
+    margin: 8px clamp(10px, 5vw, 80px);
+    height: 48px;
+    border-radius: 24px;
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    padding: 2px 12px;
+    padding-right: 18px;
+    top: 8px;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px;
+    gap: 8px;
+}
+
+.title>img {
+    height: 24px;
+    width: 24px;
+}
+
+.title>p {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#root,
+body {
+    margin: 0px;
+
+}
+
+.mainpage {
+    height: calc(100vh - 56px);
+    width: 100%;
+    margin-top: -8px;
+}
+
+.road-1 {
+    position: absolute;
+    top: -167px;
+    rotate: 30deg;
+    left: 50px;
+    width: 220px;
+}
+
+.road-2 {
+    position: absolute;
+    top: 167px;
+    rotate: -90deg;
+    right: -118px;
+    width: 320px;
+}
+
+.road-3 {
+    position: absolute;
+    bottom: -290px;
+    rotate: 0deg;
+    right: -50px;
+    width: 1450px;
+}
+
+.main-sector {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 40%;
+    left: 50%;
+    min-height: 120px;
+    min-width: 240px;
+    max-width: 1000px;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.extra {
+    font-weight: bold;
+
+}
+
+@keyframes topFadeIn {
+    0% {
+        position: absolute;
+        margin-top: 100px;
+        opacity: 0;
+    }
+
+    50% {
+        margin-top: 0px;
+    }
+
+    100% {
+        position: absolute;
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes topFadeIn2 {
+    0% {
+        position: absolute;
+        top: -100px;
+        opacity: 0;
+    }
+
+    50% {
+        top: 12px;
+    }
+
+    100% {
+        position: absolute;
+        top: 12px;
+        opacity: 1;
+    }
+}
+
+.main-sector {
+    animation-name: topFadeIn;
+    animation-duration: 1s;
+}
+
+.tag-front {
+    margin-top: 0px;
+    height: min-content;
+}
+
+.tag-front:hover {
+    margin-top: -4px;
+    height: min-content;
+}
+
+.main-sector>p {
+    font-size: 54px;
+    color: black;
+    font-weight: 700;
+    font-family: 'IBM Plex Sans';
+    margin-bottom: 0px;
+}
+
+.main-container {
+    width: 100vw;
+    height: fit-content;
+    margin-top: -8px;
+}
+
+.tools {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 32px;
+}
+
+.road-section {
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    height: 100vh;
+    width: 100vw;
+    margin-top: -8px;
+    z-index: -1;
+}
+
+.tool {
+    cursor: pointer;
+    transition: 0.333333s;
+    font-family: 'Roboto';
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.tool:hover {
+    text-decoration: underline;
+    text-decoration-color: black;
+}
+
+.car-x {
+    position: absolute;
+    top: -207px;
+    rotate: 30deg;
+    left: 49px;
+}
+
+.car-y {
+    position: absolute;
+    top: -228px;
+    rotate: 30deg;
+    left: 42px;
+}
+
+.car-z {
+    position: absolute;
+    top: 175px;
+    rotate: -90deg;
+    right: -133px;
+    width: 320px;
+}
+
+.car-a {
+    position: absolute;
+    top: 185px;
+    rotate: -90deg;
+    right: -110px;
+    width: 320px;
+}
+
+.car-b {
+    position: absolute;
+    bottom: -242px;
+    rotate: 0deg;
+    right: -106px;
+    width: 1450px;
+}
+
+
+
+.car-box {
+    width: 213px;
+    height: 550px;
+    position: relative;
+}
+
+.car1 {
+    position: absolute;
+}
+
+#car1 {
+    position: absolute;
+    rotate: 30deg;
+    left: 200px;
+    top: -214px;
+    width: 220px;
+    position: absolute;
+    offset-path: path("M0 549.5H123C123 549.5 167 549 189.5 526C212 503 212 476.5 212 476.5V306V117.5V0");
+    animation: move 10000ms infinite alternate ease-in-out;
+}
+
+#car1>img {
+    width: 20px;
+    height: 20px;
+}
+
+@keyframes move {
+    0% {
+        offset-distance: 0%;
+        opacity: 0%;
+    }
+
+    20% {
+        opacity: 0%;
+    }
+
+    30% {
+        opacity: 100%;
+    }
+
+    100% {
+        offset-distance: 100%;
+        opacity: 100%;
+    }
+}
+
+.sidedesk {
+    width: clamp(180px, 10vw, 280px);
+    margin-top: 16px;
+}
+
+.sidedesk>div {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-right: 1px solid lightgray;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidelink {
+    font-size: 16px;
+    color: gray;
+    cursor: pointer;
+    transition: 0.333333s;
+}
+
+.sidelink:hover {
+    margin-left: 8px;
+}
+
+.maindesk {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0px clamp(32px, 8vw, 64px);
+    height: 100%;
+    overflow: scroll;
+    margin-right: 4px;
+}
+
+h1 {
+    font-family: "Roboto";
+
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: stretch;
+    max-width: 1200px;
+    gap: 8px;
+
+}
+
+.feature-box {
+    border: 0.5px solid lightgray;
+    transition: 0.3333s;
+    padding: 18px 13px;
+    height: fit-content;
+    margin: 8px;
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    box-shadow: 1px 9px 15px -2px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box:hover {
+    margin-top: 6px;
+    margin-bottom: 8px;
+    box-shadow: 1px 9px 15px -2px rgba(0, 0, 0, 0.2);
+}
+
+.techno {
+    display: flex;
+    position: relative;
+    width: 100%;
+    min-height: 30rem;
+    background-color: white;
+}
+
+.techno-tab {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+
+.techno-tab>div>h1 {
+    margin-bottom: 12px;
+}
+
+.techno-tab>div {
+    width: 100%;
+    height: fit-content;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    padding: clamp(4px, 1vw, 16px);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bar-c {
+    position: relative;
+    width: 100%;
+    height: 12px;
+    border-radius: 12px;
+    background: lightgray;
+}
+
+.bar-min {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 85%;
+    z-index: 2;
+    height: 12px;
+    border-radius: 12px;
+    background: var(--chrysler_blue);
+}
+
+.bar-max {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 99%;
+    z-index: 1;
+    height: 12px;
+    border-radius: 12px;
+    background: var(--amethyst);
+}
+
+.bar-max2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 98%;
+    z-index: 1;
+    height: 12px;
+    border-radius: 12px;
+    background: #22c48e;
+}
+
+.content-box {
+    flex-direction: column;
+    gap: 8px;
+    display: flex;
+    border-radius: 16px;
+    background: #FFF;
+    border: 1px solid lightgray;
+    box-shadow: 1px 9px 15px -2px rgba(0, 0, 0, 0.1);
+    padding: 12px 10px;
+    margin: 0px 12px;
+    margin-top: 4px;
+    margin-bottom: 0px;
+    transition: 0.33333333s;
+}
+
+.content-box:hover {
+    box-shadow: 1px 9px 15px -2px rgba(0, 0, 0, 0.2);
+    margin-top: 0px;
+    margin-bottom: 4px;
+}
+
+.content-box2 {
+    width: 25%;
+    flex-direction: column;
+    gap: 8px;
+    display: flex;
+    border-radius: 16px;
+    background: #FFF;
+    border: 1px solid lightgray;
+    box-shadow: 1px 9px 15px -2px rgba(0, 0, 0, 0.1);
+    padding: 12px 10px;
+    margin: 0px 12px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    transition: 0.33333333s;
+    min-width: 180px;
+}
+
+.content-box2:hover {
+    box-shadow: 1px 9px 15px -2px rgba(0, 0, 0, 0.2);
+    margin-top: -3px;
+    margin-bottom: 3px;
+}
+
+.content-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    gap: 12px;
+
+}
+
+.banner {
+    width: 50px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #00A36C;
+}
+
+.box-header {
+    font-family: 'Helvetica';
+    font-weight: 200;
+    font-size: 20px;
+    margin-top: 12px;
+}
+
+.box-des {
+    font-size: 15px;
+    color: black;
+}
+
+.xxz {
+    margin-top: 32px;
+    margin-bottom: -4px;
+    transition: 0.3333s;
+}
+
+.xxz:hover {
+    margin-top: 28px;
+    margin-bottom: 0px;
+    box-shadow: 0px 5px 5px 5px var(--chrysler_blue);
+}
+
+.stats {
+    min-height: 180px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: white;
+    background: linear-gradient(45deg, #8F17ED66, #2ECDF066, #13FFF166);
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+.stat-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat-data>p {
+    margin: 0px;
+    font-size: 48px;
+    color: black;
+    font-family: "Noto Sans Mono", monospace;
+}
+
+.stat-data>div {
+    font-size: 24px;
+    color: black;
+    font-family: 'Arial';
+
+}
+
+.root {
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+.divider {
+    width: 2px;
+    height: 45px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .main-sector {
+        width: 80vw;
+        padding: clamp(24px, 4vw, 40px);
+    }
+
+    .topbar {
+        margin-left: 0px;
+        margin-right: 0px;
+        overflow: hidden;
+        padding-left: 18px;
+        padding-right: 18px;
+        width: calc(100%);
+        justify-content: start;
+        border-radius: 0px;
+        background-color: white;
+        position: sticky;
+        top: 0px;
+        left: 0px;
+        z-index: 100;
+        border-bottom: 1px solid black;
+    }
+
+    .title {
+        margin-right: auto;
+    }
+
+    .stats {
+        gap: 12px;
+        flex-direction: column;
+        align-items: start;
+        padding: 8px 32px;
+        padding-right: 0px;
+    }
+
+    .divider {
+        width: 50%;
+        height: 2px;
+    }
+
+    .stat-data {
+        flex-direction: row;
+        justify-content: start;
+        gap: 18px;
+    }
+
+    .stat-data>p {
+        font-size: 28px;
+    }
+
+    .stat-data>div {
+        font-size: 22px;
+    }
+
+    .main-sector {
+        top: 0px;
+        left: 0px;
+        position: relative;
+        transform: none;
+    }
+}
+
+@media only screen and (max-width: 900px) and (max-height: 700px) {
+    .main-sector {
+        top: 0px;
+        left: 0px;
+        position: relative;
+        transform: none;
+    }
+}
